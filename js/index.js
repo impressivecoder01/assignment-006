@@ -10,18 +10,23 @@ const showTrees = (plants) => {
     for (let plant of plants) {
         const aside = document.createElement('div')
         aside.innerHTML = `
-        <div class="">
-            <img src=${plant.image} alt="error">
-        <div class="text-div">
-            <h1>${plant.name}</h1>
-            <p>${plant.description}</p>
-        </div>
-        <div class="text-div-two">
-            <button class="">${plant.category}</button>
-            <h1>৳${plant.price}</h1>
-        </div>
-            <button class="bg-[#15803d] text-white font-medium">Add to Card</button>
-        </div>
+        <div class="card bg-white w-96 shadow-sm">
+  <figure>
+    <img class='h-[185px] w-[310px]'
+      src="${plant.image}" />
+  </figure>
+  <div class="card-body">
+    <h2 class="card-title">${plant.name}</h2>
+    <p>${plant.description}</p>
+    <div class='flex items-center gap-7'>
+    <button>${plant.category}</button>
+    <p>৳${plant.price}</p>
+    </div>
+    <div class="card-actions w-full">
+      <button class="btn btn-primary">Add to Card</button>
+    </div>
+  </div>
+</div>
         `
         category.appendChild(aside)
     }
