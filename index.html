@@ -64,23 +64,31 @@
         </section>
         <!-- hero section end -->
          <!-- main card section -->
-          <section class="bg-green-100 max-w-[1540px] mx-auto" >
+          <section class="bg-green-100 max-w-[1540px] mx-auto grid grid-cols-3" >
             <div class="left-div" id="left-div">
-                <!-- <button onclick="showFruitTree(category)" id="fruit">Fruit Tree</button> -->
-                 <button onclick="loadFruit()">fruit</button>
-                 <button onclick="loadFlower()">Flowering </button>
-                 <button onclick="loadShade()">Shade </button>
-                 <button onclick="loadMedical()">Medical </button>
-                 <button onclick="loadTimber()">timber </button>
-                 <button onclick="loadEverGreen()">evergreen </button>
-                 <button onclick="loadOrnamental()">Ornamental </button>
-                 <button onclick="loadBamboo()">bamboo </button>
-                 <button onclick="loadClimber()">climber </button>
-                 <button onclick="loadAquatic()">aquatic </button>
+                <div class="h1-div">
+                    <h1 class="text-2xl font-bold">Categories</h1>
+                </div>
+                <div class="btn-div flex flex-col items-start">
+
+                <button onclick="loadTrees()">All Trees</button>
+                <button onclick="loadFruit()">Fruit Trees</button>
+                 <button onclick="loadFlower()">Flowering Trees </button>
+                 <button onclick="loadShade()">Shade Trees </button>
+                 <button onclick="loadMedical()">Medical Trees </button>
+                 <button onclick="loadTimber()">Timber Trees </button>
+                 <button onclick="loadEverGreen()">Evergreen Trees</button>
+                 <button onclick="loadOrnamental()">Ornamental Trees</button>
+                 <button onclick="loadBamboo()">Bamboo </button>
+                 <button onclick="loadClimber()">Climber </button>
+                 <button onclick="loadAquatic()">Aquatic Plants</button>
+                </div>
+                 
             </div>
-            <div class="middle-div grid grid-cols-3 gap-3 " id="category">
+            <div class="middle-div grid grid-cols-3 gap-3" id="category">
             </div>
             <div class="right-div">
+                <h1>add cards</h1>
 
             </div>
           </section>
