@@ -148,4 +148,42 @@ const showShade = (fruits)=>{
   }
 }
 // Shade end
+// medical
+const loadMedical = ()=>{
+  fetch('https://openapi.programming-hero.com/api/plants')
+      .then(res =>res.json())
+      .then(fruit => showMedical(fruit.plants))
+}
+const showMedical = (fruits)=>{
+  const category = document.getElementById('category')
+  category.innerHTML = ''
+  for(let fruit of fruits){
+    if(fruit.category === 'Medicinal Tree'){
+      const fruitTree = document.createElement('div')
+      fruitTree.innerHTML = `
+      <figure>
+    <img class='h-[185px] w-[310px]'
+      src="${fruit.image}" />
+  </figure>
+  <div class="card-body">
+    <h2 class="card-title">${fruit.name}</h2>
+    <p>${fruit.description}</p>
+    <div class='flex items-center gap-7'>
+   
+    <button>${fruit.category}</button>
+
+    <p>৳${fruit.price}</p>
+    </div>
+    <div class="card-actions w-full">
+      <button class="btn btn-primary">Add to Card</button>
+    </div>
+  </div>
+</div>
+      `
+ category.appendChild(fruitTree)
+
+    }
+  }
+}
+// medical end
 loadTrees()
