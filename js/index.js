@@ -18,7 +18,7 @@ const showTrees = (plants) => {
       src="${plant.image}" />
   </figure>
   <div class="card-body">
-    <h2 class="card-title">${plant.name}</h2>
+    <button onclick="loadTreeDetails(${plant.id})" class="card-title">${plant.name}</button>
     <p>${plant.description}</p>
     <div class='flex items-center gap-7'>
    
@@ -56,7 +56,7 @@ const showFruitTree = (fruits) =>{
       src="${fruit.image}" />
   </figure>
   <div class="card-body">
-    <h2 class="card-title">${fruit.name}</h2>
+    <button onclick="loadTreeDetails(${fruit.id})" class="card-title">${fruit.name}</button>
     <p>${fruit.description}</p>
     <div class='flex items-center gap-7'>
    
@@ -97,7 +97,7 @@ const showFlower =(fruits)=>{
       src="${fruit.image}" />
   </figure>
   <div class="card-body">
-    <h2 class="card-title">${fruit.name}</h2>
+    <button onclick="loadTreeDetails(${fruit.id})" class="card-title">${fruit.name}</button>
     <p>${fruit.description}</p>
     <div class='flex items-center gap-7'>
    
@@ -138,7 +138,7 @@ const showShade = (fruits)=>{
       src="${fruit.image}" />
   </figure>
   <div class="card-body">
-    <h2 class="card-title">${fruit.name}</h2>
+    <button onclick="loadTreeDetails(${fruit.id})" class="card-title">${fruit.name}</button>
     <p>${fruit.description}</p>
     <div class='flex items-center gap-7'>
    
@@ -179,7 +179,7 @@ const showMedical = (fruits)=>{
       src="${fruit.image}" />
   </figure>
   <div class="card-body">
-    <h2 class="card-title">${fruit.name}</h2>
+    <button onclick="loadTreeDetails(${fruit.id})" class="card-title">${fruit.name}</button>
     <p>${fruit.description}</p>
     <div class='flex items-center gap-7'>
    
@@ -220,7 +220,7 @@ const showTimber = (fruits)=>{
       src="${fruit.image}" />
   </figure>
   <div class="card-body">
-    <h2 class="card-title">${fruit.name}</h2>
+    <button onclick="loadTreeDetails(${fruit.id})" class="card-title">${fruit.name}</button>
     <p>${fruit.description}</p>
     <div class='flex items-center gap-7'>
    
@@ -261,7 +261,7 @@ const showEverGreen = (fruits)=>{
       src="${fruit.image}" />
   </figure>
   <div class="card-body">
-    <h2 class="card-title">${fruit.name}</h2>
+    <button onclick="loadTreeDetails(${fruit.id})" class="card-title">${fruit.name}</button>
     <p>${fruit.description}</p>
     <div class='flex items-center gap-7'>
    
@@ -302,7 +302,7 @@ const showOrnamental = (fruits)=>{
       src="${fruit.image}" />
   </figure>
   <div class="card-body">
-    <h2 class="card-title">${fruit.name}</h2>
+    <button onclick="loadTreeDetails(${fruit.id})" class="card-title">${fruit.name}</button>
     <p>${fruit.description}</p>
     <div class='flex items-center gap-7'>
    
@@ -343,7 +343,7 @@ const showBamboo = (fruits)=>{
       src="${fruit.image}" />
   </figure>
   <div class="card-body">
-    <h2 class="card-title">${fruit.name}</h2>
+    <button onclick="loadTreeDetails(${fruit.id})" class="card-title">${fruit.name}</button>
     <p>${fruit.description}</p>
     <div class='flex items-center gap-7'>
    
@@ -387,7 +387,7 @@ const showClimber= (fruits)=>{
       src="${fruit.image}" />
   </figure>
   <div class="card-body">
-    <h2 class="card-title">${fruit.name}</h2>
+    <button onclick="loadTreeDetails(${fruit.id})" class="card-title">${fruit.name}</button>
     <p>${fruit.description}</p>
     <div class='flex items-center gap-7'>
    
@@ -430,7 +430,7 @@ const showAquatic = (fruits)=>{
       src="${fruit.image}" />
   </figure>
   <div class="card-body">
-    <h2 class="card-title">${fruit.name}</h2>
+    <button onclick="loadTreeDetails(${fruit.id})" class="card-title">${fruit.name}</button>
     <p>${fruit.description}</p>
     <div class='flex items-center gap-7'>
    
@@ -458,5 +458,36 @@ const removeActive = ()=>{
   // lstbtn.forEach(btn => btn.classList.add('active'))
 }
 // active function btn end
+const loadTreeDetails = async(id)=>{
+  const url = `https://openapi.programming-hero.com/api/plant/${id}`
+  const res = await fetch(url)
+  const details = await res.json()
+  displayTreeDetails(details.plants)
+}
+const displayTreeDetails = (details)=>{
+  console.log(details)
+  const detailsContainer = document.getElementById('details-container')
+  detailsContainer.innerHTML = `
+  <figure>
+    <img class='h-[195px] w-full'
+      src="${details.image}" />
+  </figure>
+  <div class="card-body">
+    <h2 class="card-title">${details.name}</h2>
+    <p>${details.description}</p>
+    <div class='flex items-center gap-7'>
+   
+    <button>${details.category}</button>
+
+    <p>৳${details.price}</p>
+    </div>
+    <div class="card-actions w-full">
+      <button class="btn btn-primary">Add to Card</button>
+    </div>
+  </div>
+</div>
+  `
+  document.getElementById('my_modal_5').showModal()
+}
 
 loadTrees()
