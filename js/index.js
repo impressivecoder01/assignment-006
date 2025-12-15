@@ -4,7 +4,9 @@ const loadTrees = () => {
         .then(plants => showTrees(plants.plants))
 }
 const showTrees = (plants) => {
-    // console.log(plants)
+    removeActive()
+  const getBtn = document.getElementById('all-tree-btn')
+  getBtn.classList.add('active')
     const category = document.getElementById('category')
     category.innerHTML = ''
     for (let plant of plants) {
@@ -40,6 +42,9 @@ const loadFruit =()=>{
       .then(fruit => showFruitTree(fruit.plants))
 }
 const showFruitTree = (fruits) =>{
+  removeActive()
+  const getBtn = document.getElementById('fruit-btn')
+  getBtn.classList.add('active')
   const category = document.getElementById('category')
   category.innerHTML = ''
   for(let fruit of fruits){
@@ -78,7 +83,9 @@ const loadFlower=()=>{
       .then(fruit => showFlower(fruit.plants))
 }
 const showFlower =(fruits)=>{
-  // console.log(fruits)
+  removeActive()
+  const getBtn = document.getElementById('flower-btn')
+  getBtn.classList.add('active')
   const category = document.getElementById('category')
   category.innerHTML = ''
   for(let fruit of fruits){
@@ -117,6 +124,9 @@ const loadShade=()=>{
       .then(fruit => showShade(fruit.plants))
 }
 const showShade = (fruits)=>{
+  removeActive()
+  const getBtn = document.getElementById('shade-btn')
+  getBtn.classList.add('active')
   const category = document.getElementById('category')
   category.innerHTML = ''
   for(let fruit of fruits){
@@ -155,6 +165,9 @@ const loadMedical = ()=>{
       .then(fruit => showMedical(fruit.plants))
 }
 const showMedical = (fruits)=>{
+  removeActive()
+  const getBtn = document.getElementById('medical-btn')
+  getBtn.classList.add('active')
   const category = document.getElementById('category')
   category.innerHTML = ''
   for(let fruit of fruits){
@@ -193,6 +206,9 @@ const loadTimber = ()=>{
       .then(fruit => showTimber(fruit.plants))
 }
 const showTimber = (fruits)=>{
+  removeActive()
+  const getBtn = document.getElementById('timber-btn')
+  getBtn.classList.add('active')
   const category = document.getElementById('category')
   category.innerHTML = ''
   for(let fruit of fruits){
@@ -231,6 +247,9 @@ const loadEverGreen = ()=>{
       .then(fruit => showEverGreen(fruit.plants))
 }
 const showEverGreen = (fruits)=>{
+  removeActive()
+  const getBtn = document.getElementById('evergreen-btn')
+  getBtn.classList.add('active')
   const category = document.getElementById('category')
   category.innerHTML = ''
   for(let fruit of fruits){
@@ -269,6 +288,9 @@ const loadOrnamental = ()=>{
       .then(fruit => showOrnamental(fruit.plants))
 }
 const showOrnamental = (fruits)=>{
+  removeActive()
+  const getBtn = document.getElementById('ornamental-btn')
+  getBtn.classList.add('active')
   const category = document.getElementById('category')
   category.innerHTML = ''
   for(let fruit of fruits){
@@ -307,6 +329,9 @@ const loadBamboo = ()=>{
       .then(fruit => showBamboo(fruit.plants))
 }
 const showBamboo = (fruits)=>{
+  removeActive()
+  const getBtn = document.getElementById('bamboo-btn')
+  getBtn.classList.add('active')
   const category = document.getElementById('category')
   category.innerHTML = ''
   for(let fruit of fruits){
@@ -342,10 +367,16 @@ const showBamboo = (fruits)=>{
 const loadClimber = ()=>{
   fetch('https://openapi.programming-hero.com/api/plants')
       .then(res =>res.json())
-      .then(fruit => showClimber(fruit.plants))
+      .then(fruit => {
+        showClimber(fruit.plants)
+        
+      })
 }
 const showClimber= (fruits)=>{
   const category = document.getElementById('category')
+  removeActive()
+  const getBtn = document.getElementById('climber-btn')
+  getBtn.classList.add('active')
   category.innerHTML = ''
   for(let fruit of fruits){
     if(fruit.category === 'Climber'){
@@ -380,9 +411,14 @@ const showClimber= (fruits)=>{
 const loadAquatic = ()=>{
   fetch('https://openapi.programming-hero.com/api/plants')
       .then(res =>res.json())
-      .then(fruit => showAquatic(fruit.plants))
+      .then(fruit => {
+        removeActive()
+        showAquatic(fruit.plants)
+      })
 }
 const showAquatic = (fruits)=>{
+  const getBtn= document.getElementById('aquatic-btn')
+  getBtn.classList.add('active')
   const category = document.getElementById('category')
   category.innerHTML = ''
   for(let fruit of fruits){
@@ -415,5 +451,11 @@ const showAquatic = (fruits)=>{
 }
 // aquatic end
 
+const removeActive = ()=>{
+  const lstbtn = document.querySelectorAll('.tree-btn')
+  // console.log(lstbtn)
+  lstbtn.forEach(btn => btn.classList.remove('active'))
+  // lstbtn.forEach(btn => btn.classList.add('active'))
+}
 
 loadTrees()
