@@ -68,7 +68,7 @@ const showFruitTree = (fruits) =>{
     <p>৳${fruit.price}</p>
     </div>
     <div class="card-actions w-full">
-      <button class="btn btn-primary w-full">Add to Card</button>
+      <button onclick='showInAddCard(${fruit.id})' class="btn btn-primary w-full">Add to Card</button>
     </div>
   </div>
 </div>
@@ -480,6 +480,34 @@ const removeActive = ()=>{
   // lstbtn.forEach(btn => btn.classList.add('active'))
 }
 // active function btn end
+
+
+
+// show card in right div
+const showInAddCard = async(id)=>{
+  const url = `https://openapi.programming-hero.com/api/plant/${id}`
+  const res = await fetch(url)
+  const details = await res.json()
+  showing(details.plants)
+}
+const showing = (details)=>{
+  const rightContainer = document.getElementById('right')
+  // let sum = 0
+  // let price =details.price
+  // let total = sum + price
+  // console.log(total)
+  alert(`${details.name} added in your card`)
+  rightContainer.innerHTML=`
+  <div>
+  <p>${details.name}</p>
+  <p>৳${details.price}</p>
+  </div>
+  <p></p>
+  
+  Total:৳ 
+  `
+}
+// end
 // details function
 const loadTreeDetails = async(id)=>{
   const url = `https://openapi.programming-hero.com/api/plant/${id}`
