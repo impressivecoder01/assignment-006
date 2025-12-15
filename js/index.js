@@ -450,12 +450,13 @@ const showAquatic = (fruits)=>{
   }
 }
 // aquatic end
-
+// active function btn
 const removeActive = ()=>{
   const lstbtn = document.querySelectorAll('.tree-btn')
   // console.log(lstbtn)
   lstbtn.forEach(btn => btn.classList.remove('active'))
   // lstbtn.forEach(btn => btn.classList.add('active'))
 }
+// active function btn end
 
 loadTrees()

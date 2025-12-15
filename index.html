@@ -64,7 +64,7 @@
         </section>
         <!-- hero section end -->
          <!-- main card section -->
-          <section class="bg-green-100 max-w-[1540px] mx-auto grid grid-cols-3 py-24" >
+          <section class="bg-green-100 max-w-[1540px] mx-auto grid grid-cols-1 md:grid-cols-3 py-24" >
             <div class="left-div" id="left-div">
                 <div class="h1-div">
                     <h1 class="text-2xl font-bold">Categories</h1>
@@ -85,7 +85,7 @@
                 </div>
                  
             </div>
-            <div class="middle-div grid grid-cols-3 gap-3" id="category">
+            <div class="middle-div grid grid-cols-1 md:grid-cols-3 gap-3" id="category">
             </div>
             <div class="right-div">
                 <h1>add cards</h1>
@@ -163,6 +163,22 @@
                 <h6 class="text-[#ffffff] py-4 text-center">© 2025 Green Earth. All Rights Reserved.</h6>
             </div>
          </footer>
+
+         <!-- modal by daisy ui -->
+          <!-- Open the modal using ID.showModal() method -->
+<button class="btn" onclick="my_modal_1.showModal()">open modal</button>
+<dialog id="my_modal_1" class="modal">
+  <div class="modal-box">
+    <h3 class="text-lg font-bold">Hello!</h3>
+    <p class="py-4">Press ESC key or click the button below to close</p>
+    <div class="modal-action">
+      <form method="dialog">
+        <!-- if there is a button in form, it will close the modal -->
+        <button class="btn">Close</button>
+      </form>
+    </div>
+  </div>
+</dialog>
     </main>
     <!-- js -->
     <script src="./js/index.js"></script>
