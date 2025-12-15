@@ -1,4 +1,5 @@
 const loadTrees = () => {
+  spinner(true)
     fetch('https://openapi.programming-hero.com/api/plants')
         .then(res => res.json())
         .then(plants => showTrees(plants.plants))
@@ -27,16 +28,18 @@ const showTrees = (plants) => {
     <p>৳${plant.price}</p>
     </div>
     <div class="card-actions w-full">
-      <button class="btn btn-primary">Add to Card</button>
+      <button class="btn btn-primary w-full">Add to Card</button>
     </div>
   </div>
 </div>
         `
         category.appendChild(aside)
     }
+    spinner(false)
 }
 // fruit
 const loadFruit =()=>{
+  spinner(true)
       fetch('https://openapi.programming-hero.com/api/plants')
       .then(res =>res.json())
       .then(fruit => showFruitTree(fruit.plants))
@@ -65,7 +68,7 @@ const showFruitTree = (fruits) =>{
     <p>৳${fruit.price}</p>
     </div>
     <div class="card-actions w-full">
-      <button class="btn btn-primary">Add to Card</button>
+      <button class="btn btn-primary w-full">Add to Card</button>
     </div>
   </div>
 </div>
@@ -74,10 +77,12 @@ const showFruitTree = (fruits) =>{
 
     }
   }
+  spinner(false)
 }
 // fruit end
 // flower
 const loadFlower=()=>{
+  spinner(true)
   fetch('https://openapi.programming-hero.com/api/plants')
       .then(res =>res.json())
       .then(fruit => showFlower(fruit.plants))
@@ -106,7 +111,7 @@ const showFlower =(fruits)=>{
     <p>৳${fruit.price}</p>
     </div>
     <div class="card-actions w-full">
-      <button class="btn btn-primary">Add to Card</button>
+      <button class="btn btn-primary w-full">Add to Card</button>
     </div>
   </div>
 </div>
@@ -115,10 +120,12 @@ const showFlower =(fruits)=>{
 
     }
   }
+  spinner(false)
 }
 // flower end
 // Shade 
 const loadShade=()=>{
+    spinner(true)
   fetch('https://openapi.programming-hero.com/api/plants')
       .then(res =>res.json())
       .then(fruit => showShade(fruit.plants))
@@ -147,7 +154,7 @@ const showShade = (fruits)=>{
     <p>৳${fruit.price}</p>
     </div>
     <div class="card-actions w-full">
-      <button class="btn btn-primary">Add to Card</button>
+      <button class="btn btn-primary w-full">Add to Card</button>
     </div>
   </div>
 </div>
@@ -156,10 +163,12 @@ const showShade = (fruits)=>{
 
     }
   }
+  spinner(false)
 }
 // Shade end
 // medical
 const loadMedical = ()=>{
+    spinner(true)
   fetch('https://openapi.programming-hero.com/api/plants')
       .then(res =>res.json())
       .then(fruit => showMedical(fruit.plants))
@@ -188,7 +197,7 @@ const showMedical = (fruits)=>{
     <p>৳${fruit.price}</p>
     </div>
     <div class="card-actions w-full">
-      <button class="btn btn-primary">Add to Card</button>
+      <button class="btn btn-primary w-full">Add to Card</button>
     </div>
   </div>
 </div>
@@ -197,10 +206,12 @@ const showMedical = (fruits)=>{
 
     }
   }
+  spinner(false)
 }
 // medical end
 // timber
 const loadTimber = ()=>{
+  spinner(true)
   fetch('https://openapi.programming-hero.com/api/plants')
       .then(res =>res.json())
       .then(fruit => showTimber(fruit.plants))
@@ -229,7 +240,7 @@ const showTimber = (fruits)=>{
     <p>৳${fruit.price}</p>
     </div>
     <div class="card-actions w-full">
-      <button class="btn btn-primary">Add to Card</button>
+      <button class="btn btn-primary w-full">Add to Card</button>
     </div>
   </div>
 </div>
@@ -238,10 +249,12 @@ const showTimber = (fruits)=>{
 
     }
   }
+  spinner(false)
 }
 // timber end
 // evergreen
 const loadEverGreen = ()=>{
+  spinner(true)
   fetch('https://openapi.programming-hero.com/api/plants')
       .then(res =>res.json())
       .then(fruit => showEverGreen(fruit.plants))
@@ -270,7 +283,7 @@ const showEverGreen = (fruits)=>{
     <p>৳${fruit.price}</p>
     </div>
     <div class="card-actions w-full">
-      <button class="btn btn-primary">Add to Card</button>
+      <button class="btn btn-primary w-full">Add to Card</button>
     </div>
   </div>
 </div>
@@ -279,10 +292,12 @@ const showEverGreen = (fruits)=>{
 
     }
   }
+  spinner(false)
 }
 // evergreen end
 // ornamental
 const loadOrnamental = ()=>{
+  spinner(true)
   fetch('https://openapi.programming-hero.com/api/plants')
       .then(res =>res.json())
       .then(fruit => showOrnamental(fruit.plants))
@@ -311,7 +326,7 @@ const showOrnamental = (fruits)=>{
     <p>৳${fruit.price}</p>
     </div>
     <div class="card-actions w-full">
-      <button class="btn btn-primary">Add to Card</button>
+      <button class="btn btn-primary w-full">Add to Card</button>
     </div>
   </div>
 </div>
@@ -320,10 +335,12 @@ const showOrnamental = (fruits)=>{
 
     }
   }
+  spinner(false)
 }
 // ornamental end
 // bamboo
 const loadBamboo = ()=>{
+  spinner(true)
   fetch('https://openapi.programming-hero.com/api/plants')
       .then(res =>res.json())
       .then(fruit => showBamboo(fruit.plants))
@@ -352,7 +369,7 @@ const showBamboo = (fruits)=>{
     <p>৳${fruit.price}</p>
     </div>
     <div class="card-actions w-full">
-      <button class="btn btn-primary">Add to Card</button>
+      <button class="btn btn-primary w-full">Add to Card</button>
     </div>
   </div>
 </div>
@@ -361,10 +378,12 @@ const showBamboo = (fruits)=>{
 
     }
   }
+  spinner(false)
 }
 // bamboo end
 // climbers
 const loadClimber = ()=>{
+  spinner(true)
   fetch('https://openapi.programming-hero.com/api/plants')
       .then(res =>res.json())
       .then(fruit => {
@@ -396,7 +415,7 @@ const showClimber= (fruits)=>{
     <p>৳${fruit.price}</p>
     </div>
     <div class="card-actions w-full">
-      <button class="btn btn-primary">Add to Card</button>
+      <button class="btn btn-primary w-full">Add to Card</button>
     </div>
   </div>
 </div>
@@ -405,10 +424,12 @@ const showClimber= (fruits)=>{
 
     }
   }
+  spinner(false)
 }
 // climbers end
 // aquatic
 const loadAquatic = ()=>{
+  spinner(true)
   fetch('https://openapi.programming-hero.com/api/plants')
       .then(res =>res.json())
       .then(fruit => {
@@ -439,7 +460,7 @@ const showAquatic = (fruits)=>{
     <p>৳${fruit.price}</p>
     </div>
     <div class="card-actions w-full">
-      <button class="btn btn-primary">Add to Card</button>
+      <button class="btn btn-primary w-full">Add to Card</button>
     </div>
   </div>
 </div>
@@ -448,6 +469,7 @@ const showAquatic = (fruits)=>{
 
     }
   }
+  spinner(false)
 }
 // aquatic end
 // active function btn
@@ -458,6 +480,7 @@ const removeActive = ()=>{
   // lstbtn.forEach(btn => btn.classList.add('active'))
 }
 // active function btn end
+// details function
 const loadTreeDetails = async(id)=>{
   const url = `https://openapi.programming-hero.com/api/plant/${id}`
   const res = await fetch(url)
@@ -482,12 +505,24 @@ const displayTreeDetails = (details)=>{
     <p>৳${details.price}</p>
     </div>
     <div class="card-actions w-full">
-      <button class="btn btn-primary">Add to Card</button>
+      <button class="btn btn-primary w-full">Add to Card</button>
     </div>
   </div>
 </div>
   `
   document.getElementById('my_modal_5').showModal()
+}
+// details function end
+// loading spinner
+const spinner = (s)=>{
+  if(s === true){
+    document.getElementById('spinner').classList.remove('hidden')
+    document.getElementById('category').classList.add('hidden')
+  }
+  else{
+    document.getElementById('category').classList.remove('hidden')
+    document.getElementById('spinner').classList.add('hidden')
+  }
 }
 
 loadTrees()
