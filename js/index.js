@@ -492,21 +492,47 @@ const showInAddCard = async(id)=>{
 }
 const showing = (details)=>{
   const rightContainer = document.getElementById('right')
-  // let sum = 0
+  let sum = [0]
   // let price =details.price
   // let total = sum + price
   // console.log(total)
   alert(`${details.name} added in your card`)
-  rightContainer.innerHTML=`
+  const card = document.createElement('div')
+  sum.push(details.price)
+  console.log(details.id)
+  // sum.forEach(detail=>)
+  card.innerHTML=`
+  <div class='flex justify-between'>
   <div>
   <p>${details.name}</p>
   <p>৳${details.price}</p>
+  Total:৳
   </div>
-  <p></p>
-  
-  Total:৳ 
+  <div>
+  <p onclick='deleteCard('${details.id}')>Delete</p>
+  </div>
+  </div>
   `
+  rightContainer.appendChild(card)
+  const deleteCard = (id)=>{
+  if(details.id ===id){
+    card.innerHTML=`
+  <div class='flex flex-row'>
+  <div>
+  <p>${details.name}</p>
+  <p>৳${details.price}</p>
+  Total:৳
+  </div>
+  <div>
+  <p onclick='deleteCard('${details.id}')>Delete</p>
+  </div>
+  </div>
+  `
+  rightContainer.appendChild(card)
+  }
 }
+}
+
 // end
 // details function
 const loadTreeDetails = async(id)=>{
