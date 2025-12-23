@@ -28,7 +28,7 @@ const showTrees = (plants) => {
     <p>৳${plant.price}</p>
     </div>
     <div class="card-actions w-full">
-      <button class="btn btn-primary w-full">Add to Card</button>
+      <button onclick='showInAddCard(${plant.id})' class="btn btn-primary w-full">Add to Card</button>
     </div>
   </div>
 </div>
@@ -111,7 +111,7 @@ const showFlower =(fruits)=>{
     <p>৳${fruit.price}</p>
     </div>
     <div class="card-actions w-full">
-      <button class="btn btn-primary w-full">Add to Card</button>
+      <button onclick='showInAddCard(${fruit.id})' class="btn btn-primary w-full">Add to Card</button>
     </div>
   </div>
 </div>
@@ -154,7 +154,7 @@ const showShade = (fruits)=>{
     <p>৳${fruit.price}</p>
     </div>
     <div class="card-actions w-full">
-      <button class="btn btn-primary w-full">Add to Card</button>
+      <button onclick='showInAddCard(${fruit.id})' class="btn btn-primary w-full">Add to Card</button>
     </div>
   </div>
 </div>
@@ -197,7 +197,7 @@ const showMedical = (fruits)=>{
     <p>৳${fruit.price}</p>
     </div>
     <div class="card-actions w-full">
-      <button class="btn btn-primary w-full">Add to Card</button>
+      <button onclick='showInAddCard(${fruit.id})' class="btn btn-primary w-full">Add to Card</button>
     </div>
   </div>
 </div>
@@ -240,7 +240,7 @@ const showTimber = (fruits)=>{
     <p>৳${fruit.price}</p>
     </div>
     <div class="card-actions w-full">
-      <button class="btn btn-primary w-full">Add to Card</button>
+      <button onclick='showInAddCard(${fruit.id})' class="btn btn-primary w-full">Add to Card</button>
     </div>
   </div>
 </div>
@@ -283,7 +283,7 @@ const showEverGreen = (fruits)=>{
     <p>৳${fruit.price}</p>
     </div>
     <div class="card-actions w-full">
-      <button class="btn btn-primary w-full">Add to Card</button>
+      <button onclick='showInAddCard(${fruit.id})' class="btn btn-primary w-full">Add to Card</button>
     </div>
   </div>
 </div>
@@ -326,7 +326,7 @@ const showOrnamental = (fruits)=>{
     <p>৳${fruit.price}</p>
     </div>
     <div class="card-actions w-full">
-      <button class="btn btn-primary w-full">Add to Card</button>
+      <button onclick='showInAddCard(${fruit.id})' class="btn btn-primary w-full">Add to Card</button>
     </div>
   </div>
 </div>
@@ -369,7 +369,7 @@ const showBamboo = (fruits)=>{
     <p>৳${fruit.price}</p>
     </div>
     <div class="card-actions w-full">
-      <button class="btn btn-primary w-full">Add to Card</button>
+      <button onclick='showInAddCard(${fruit.id})' class="btn btn-primary w-full">Add to Card</button>
     </div>
   </div>
 </div>
@@ -415,7 +415,7 @@ const showClimber= (fruits)=>{
     <p>৳${fruit.price}</p>
     </div>
     <div class="card-actions w-full">
-      <button class="btn btn-primary w-full">Add to Card</button>
+      <button onclick='showInAddCard(${fruit.id})' class="btn btn-primary w-full">Add to Card</button>
     </div>
   </div>
 </div>
@@ -460,7 +460,7 @@ const showAquatic = (fruits)=>{
     <p>৳${fruit.price}</p>
     </div>
     <div class="card-actions w-full">
-      <button class="btn btn-primary w-full">Add to Card</button>
+      <button onclick='showInAddCard(${fruit.id})' class="btn btn-primary w-full">Add to Card</button>
     </div>
   </div>
 </div>
@@ -506,7 +506,6 @@ const showing = (details)=>{
   <div>
   <p>${details.name}</p>
   <p>৳${details.price}</p>
-  Total:৳
   </div>
   <div>
   <p onclick='deleteCard('${details.id}')>Delete</p>
@@ -515,23 +514,12 @@ const showing = (details)=>{
   `
   rightContainer.appendChild(card)
   const deleteCard = (id)=>{
-  if(details.id ===id){
-    card.innerHTML=`
-  <div class='flex flex-row'>
-  <div>
-  <p>${details.name}</p>
-  <p>৳${details.price}</p>
-  Total:৳
-  </div>
-  <div>
-  <p onclick='deleteCard('${details.id}')>Delete</p>
-  </div>
-  </div>
-  `
-  rightContainer.appendChild(card)
-  }
+  const newCards = details.filter(i =>details.id !==id)
+  console.log(newCards)
+  } 
+  
 }
-}
+// }
 
 // end
 // details function
